@@ -40,12 +40,12 @@ export default function App() {
 }
   function closeGallery() {
     setImage(null);
-    origin.current?.focus({ preventScroll: true });
     if (position.current) window.scrollTo({ ...position.current, behavior: 'instant' });
   }
   return <>
+    <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <Header />
-    <main>
+    <main id="conteudo" tabIndex={-1}>
       <Hero />
       <div className="ribbon" aria-hidden="true">DESCOBRIR <span>✦</span> EXPLORAR <span>✦</span> FAVORITAR <span>✦</span>
             SE APAIXONAR <span>✦</span> DESCOBRIR <span>✦</span> EXPLORAR</div>
@@ -56,6 +56,6 @@ export default function App() {
       <CallToAction />
     </main>
     <Footer />
-    <Gallery image={image} onClose={closeGallery} />
+    <Gallery image={image} onClose={closeGallery} returnFocusRef={origin} />
   </>;
 }

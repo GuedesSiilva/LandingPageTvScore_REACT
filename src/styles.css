@@ -34,6 +34,22 @@ a {
   text-decoration: none;
 }
 
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #fff;
+  color: #080f1e;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 button,
 input,
 textarea,
@@ -511,10 +527,11 @@ em {
 }
 
 .gallery-note {
-  font-size: 10px;
-  color: #7687a1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #bdc9dc;
   text-align: center;
-  margin: 35px 0 0;
+  margin: 28px 0 0;
 }
 
 .steps {
@@ -620,9 +637,10 @@ em {
 }
 
 .cta > p.status {
-  font-size: 10px;
-  margin: 15px 0 0;
-  min-height: 25px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #c8d0df;
+  margin: 12px 0 0;
 }
 
 .star {
@@ -706,8 +724,8 @@ dialog p {
   position: absolute;
   top: 10px;
   right: 12px;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid #ffffff22;
   background: #111d30;
@@ -848,10 +866,6 @@ dialog p {
     font-size: 15px;
   }
 
-  .gallery-note {
-    font-size: 12px;
-  }
-
   .steps {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -894,7 +908,7 @@ dialog p {
   }
 
   .cta > p.status {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .footer-top {
@@ -1004,7 +1018,7 @@ dialog p {
   justify-content: center;
   gap: 10px;
   padding: 15px 24px;
-  background: linear-gradient(110deg, #2459cc, #4d8cff);
+  background: linear-gradient(110deg, #1d4ed8, #2459cc);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
@@ -1226,7 +1240,7 @@ header .download-button::after {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient( 110deg, transparent 25%, rgba(255, 255, 255, 0.25) 50%, transparent 75% );
+  background: linear-gradient( 110deg, transparent 25%, rgba(255, 255, 255, 0.12) 50%, transparent 75% );
   transform: translateX(-150%);
   transition: transform 650ms ease !important;
 }
@@ -1274,6 +1288,7 @@ header .brand:active img {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  background: #2459cc;
   transition: transform 300ms ease, box-shadow 300ms ease, background 300ms ease !important;
 }
 
@@ -1282,7 +1297,7 @@ header .brand:active img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient( 110deg, transparent 25%, rgba(255, 255, 255, 0.25) 50%, transparent 75% );
+  background: linear-gradient( 110deg, transparent 25%, rgba(255, 255, 255, 0.12) 50%, transparent 75% );
   transform: translateX(-150%);
   transition: transform 650ms ease !important;
 }
@@ -1295,7 +1310,7 @@ header .brand:active img {
 .hero .actions .button:hover,
 .hero .actions .button:focus-visible {
   transform: translateY(-4px) scale(1.04);
-  background: #5793ff;
+  background: #1d4ed8;
   box-shadow: 0 14px 30px rgba(36, 89, 204, 0.35), 0 0 25px rgba(77, 140, 255, 0.2);
 }
 
@@ -1901,6 +1916,13 @@ dialog#gallery {
   header nav {
     gap: 4px 22px;
     font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  header nav a {
+    min-height: 44px;
+    justify-content: center;
   }
 
   .hero {
@@ -2158,12 +2180,6 @@ dialog#gallery {
     right: 16px;
   }
 
-  .gallery-note {
-    font-size: 12px;
-    line-height: 1.6;
-    margin-top: 28px;
-  }
-
   .steps,
   .faq {
     grid-template-columns: minmax(0, 1fr);
@@ -2248,7 +2264,7 @@ dialog#gallery {
   }
 
   .cta > p.status {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
@@ -2406,13 +2422,6 @@ dialog#gallery {
     transform: none;
   }
 }
-@media (max-width: 760px) {
-  header nav {
-    display: none;
-  }
-}
-
-
 /* TvScore device shell — titanium rim, rounded glass and Dynamic Island. */
 .hero-art .phone,
 #app .screen .frame {
@@ -2645,7 +2654,7 @@ dialog#gallery {
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   #app .screen:hover .frame,
   #app .screen:focus-visible .frame {
-    transform: perspective(950px) translateY(-8px) rotateY(-20deg) rotateX(7deg);
+    transform: perspective(950px) translateY(-8px) rotateX(4deg);
     box-shadow: none;
   }
 }

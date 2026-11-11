@@ -1,9 +1,15 @@
 import { useLayoutEffect, useRef } from 'react';
 import PhoneFrame from './PhoneFrame.jsx';
 
-export default function Gallery({ image, onClose }) {
+export default function Gallery({ image, onClose, returnFocusRef }) {
   const dialogRef = useRef(null);
   const stageRef = useRef(null);
+
+  function closeGallery() {
+    dialogRef.current?.close();
+    onClose();
+    returnFocusRef.current?.focus({ preventScroll: true });
+  }
 
   useLayoutEffect(() => {
     const dialog = dialogRef.current;
@@ -48,12 +54,18 @@ export default function Gallery({ image, onClose }) {
       id="gallery"
       ref={dialogRef}
       aria-label={image?.title || 'Galeria do TvScore'}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closeGallery();
+        }
+      }}
       onCancel={(event) => {
         event.preventDefault();
-        onClose();
+        closeGallery();
       }}
       onClick={(event) => {
-        if (event.target === event.currentTarget) onClose();
+        if (event.target === event.currentTarget) closeGallery();
       }}
     >
       {image && (
@@ -62,7 +74,7 @@ export default function Gallery({ image, onClose }) {
             type="button"
             className="close"
             aria-label="Fechar imagem"
-            onClick={onClose}
+            onClick={closeGallery}
           >
             ×
           </button>

@@ -10,7 +10,7 @@ export default function Header() {
                 <path d="M7 4.5v15a1 1 0 0 0 1.52.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5Z" />
             </svg>
 
-            Conhecer o TvScore
+            Disponibilidade
         </a>
     </header>
   );
