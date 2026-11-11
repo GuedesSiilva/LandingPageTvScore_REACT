@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="public/assets/logo.png" alt="Logo do TV Score" width="150" />
+  <div align="center">
+  <img src="https://raw.githubusercontent.com/victorbispoo/tvScoreFrontFlutter/main/lib/assets/tvScoreLogin.png" alt="Logo do TV Score" width="180" />
+
 
   <h1>TV Score · Landing Page</h1>
   <p><strong>Sua próxima grande história começa aqui.</strong></p>
