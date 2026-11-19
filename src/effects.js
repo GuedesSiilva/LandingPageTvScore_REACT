@@ -40,7 +40,7 @@ export function usePageEffects() {
     if (!('IntersectionObserver' in window) || !Element.prototype.animate || !CSS.supports('translate', '0 20px') || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const cleanup = [];
     const pending = new Map();
-    const sections = document.querySelectorAll("main > section, footer");
+    const sections = document.querySelectorAll("main > section:not(.faq), footer");
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -118,11 +118,11 @@ export function usePageEffects() {
         } else {
           candidates = [...section.querySelectorAll(
             ".heading, .cards > article, .screens > .screen, " +
-            ".step-list > article, .faq-list > details, " +
+            ".step-list > article, " +
             ".cta > :not(.star), .gallery-note"
           )];
 
-          if (section.matches(".steps, .faq")) {
+          if (section.matches(".steps")) {
             const intro = section.firstElementChild;
             if (intro) candidates.unshift(...intro.children);
           }

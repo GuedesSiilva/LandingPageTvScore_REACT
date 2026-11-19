@@ -577,39 +577,46 @@ em {
   gap: 75px;
 }
 
-.faq details {
+.faq-item {
   border-bottom: 1px solid var(--line);
   padding: 23px 0;
 }
 
-.faq details:first-child {
+.faq-item:first-child {
   padding-top: 0;
 }
 
-.faq summary {
+.faq-question {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
   font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  list-style: none;
 }
 
-.faq summary::-webkit-details-marker {
-  display: none;
+.faq-question:hover {
+  color: #79a8ff;
 }
 
-.faq summary span {
+.faq-question span {
   color: var(--blue);
   font-size: 22px;
+  transform: rotate(0deg);
 }
 
-.faq details[open] summary span {
+.faq-question[aria-expanded="true"] span {
   transform: rotate(45deg);
+  color: #79a8ff;
 }
 
-.faq details p {
+.faq-answer p {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.9;
@@ -890,8 +897,8 @@ dialog p {
     display: none;
   }
 
-  .faq summary,
-  .faq details p {
+  .faq-question,
+  .faq-answer p {
     font-size: 16px;
   }
 
@@ -1448,33 +1455,6 @@ header .brand:active img {
 
 #app .screen:active .frame {
   transform: perspective(1000px) translateY(-6px) scale(1.01);
-}
-
-#duvidas details {
-  overflow: hidden;
-}
-
-#duvidas summary {
-  transition: color 250ms ease !important;
-}
-
-#duvidas summary:hover {
-  color: #79a8ff;
-}
-
-#duvidas summary span {
-  display: inline-block;
-  transform: rotate(0deg);
-  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1), color 250ms ease !important;
-}
-
-#duvidas details[data-expanded="true"] summary span {
-  transform: rotate(45deg);
-  color: #79a8ff;
-}
-
-#duvidas details[data-expanded="false"] summary span {
-  transform: rotate(0deg);
 }
 
 #acesso .button {
@@ -2220,17 +2200,17 @@ dialog#gallery {
     padding-block: 0 64px;
   }
 
-  .faq summary {
+  .faq-question {
     min-height: 44px;
     font-size: 16px;
     line-height: 1.6;
   }
 
-  .faq summary span {
+  .faq-question span {
     flex-shrink: 0;
   }
 
-  .faq details p {
+  .faq-answer p {
     margin-right: 0;
     font-size: 15px;
     line-height: 1.85;
