@@ -47,8 +47,6 @@ export default function App() {
     <Header />
     <main id="conteudo" tabIndex={-1}>
       <Hero />
-      <div className="ribbon" aria-hidden="true">DESCOBRIR <span>✦</span> EXPLORAR <span>✦</span> FAVORITAR <span>✦</span>
-            SE APAIXONAR <span>✦</span> DESCOBRIR <span>✦</span> EXPLORAR</div>
       <Features tilt={tilt} />
       <Showcase onOpen={openGallery} />
       <Steps />
