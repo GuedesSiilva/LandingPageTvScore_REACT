@@ -1,4 +1,5 @@
 import FaqItem from './FaqItem.jsx';
+import { APP_DOWNLOAD_URL, APP_WEB_URL } from '../config.js';
 
 export default function Faq() {
   return (
@@ -20,8 +21,8 @@ export default function Faq() {
                     <p>Sim. O TvScore tem uma área de favoritos para reunir os títulos que você quer guardar.</p>
                 </FaqItem>
                 <FaqItem question="Como faço para baixar?">
-                    <p>O link oficial de download será disponibilizado aqui em breve. Enquanto isso, conheça as telas e
-                        os recursos do aplicativo.</p>
+                    <p>Você pode <a href={APP_DOWNLOAD_URL}>baixar o APK para Android</a> pelos botões deste site.
+                        Se preferir, <a href={APP_WEB_URL} target="_blank" rel="noopener noreferrer">utilize o TvScore na Web</a>, diretamente pelo navegador.</p>
                 </FaqItem>
             </div>
         </section>

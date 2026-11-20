@@ -1,4 +1,5 @@
 import PhoneFrame from './PhoneFrame.jsx';
+import { APP_WEB_URL } from '../config.js';
 
 export default function Hero() {
     return (
@@ -12,7 +13,7 @@ export default function Hero() {
                 <div className="actions"><a className="button" href="#acesso">
                     Ver disponibilidade <span aria-hidden="true">↗</span>
                 </a><a
-                    className="text-link" href="#recursos">▷ &nbsp; Utilizar na Web</a></div>
+                    className="text-link" href={APP_WEB_URL} target="_blank" rel="noopener noreferrer">▷ &nbsp; Utilizar na Web</a></div>
                 <div className="note"><span>✦</span> Um novo olhar para o seu universo de filmes.</div>
             </div>
             <div className="hero-art">
