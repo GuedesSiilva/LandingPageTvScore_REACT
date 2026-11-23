@@ -18,9 +18,9 @@ export default function Hero() {
             </div>
             <div className="hero-art">
                 <div className="orbit"></div>
-                <PhoneFrame className="phone back"><img src="./assets/details.png" alt="Detalhes de filme no TvScore" /></PhoneFrame>
+                <PhoneFrame className="phone back"><img src="./assets/details.png" alt="Tela de detalhes de Naruto no TvScore" /></PhoneFrame>
                 <PhoneFrame className="phone front"><img src="./assets/home.png"
-                    alt="Tela inicial com destaques e avaliações do TvScore" /></PhoneFrame>
+                    alt="Tela inicial do TvScore com recomendações de filmes e séries" /></PhoneFrame>
                 <div className="floating rating"><span>★</span>
                     <div>Boas histórias.<small>Grandes descobertas.</small></div>
                 </div>

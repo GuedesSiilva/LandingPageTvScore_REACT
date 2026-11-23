@@ -20,7 +20,7 @@ export default function Showcase({ onOpen }) {
                             <p>Entre no seu universo.</p>
                         </div>
                     </button><button type="button" className="screen elevated" aria-haspopup="dialog" data-title="Uma descoberta a cada visita" onClick={onOpen}>
-                        <PhoneFrame className="frame"><img src="./assets/home.png" alt="Destaques e filmes mais bem avaliados"
+                        <PhoneFrame className="frame"><img src="./assets/home.png" alt="Tela inicial com recomendações de filmes e séries"
                                 loading="lazy" /><span>↗</span></PhoneFrame>
                         <div className="screen-label"><small>02</small>
                             <h3>Uma descoberta a cada visita</h3>
@@ -28,7 +28,7 @@ export default function Showcase({ onOpen }) {
                         </div>
                     </button><button type="button" className="screen" aria-haspopup="dialog" data-title="Os detalhes fazem a diferença" onClick={onOpen}>
                         <PhoneFrame className="frame"><img src="./assets/details.png"
-                                alt="Página de filme com nota, gênero e sinopse" loading="lazy" /><span>↗</span></PhoneFrame>
+                                alt="Tela de Naruto com avaliações e opções de onde assistir" loading="lazy" /><span>↗</span></PhoneFrame>
                         <div className="screen-label"><small>03</small>
                             <h3>Os detalhes fazem a diferença</h3>
                             <p>Conheça antes de escolher.</p>
