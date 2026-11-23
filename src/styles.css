@@ -6,9 +6,15 @@
  */
 
 :root {
-  --bg: #080f1e;
+  --bg: #091426;
+  --surface: #13243e;
+  --selected: #25446e;
+  --text: #ffffff;
   --muted: #929fb5;
-  --blue: #4d8cff;
+  --blue: #4f8df7;
+  --blue-hover: #79a8ff;
+  --blue-active: #4885ed;
+  --control-line: #657b9b;
   --gold: #eec15e;
   --line: #ffffff13;
 }
@@ -25,7 +31,7 @@ html {
 body {
   margin: 0;
   background: var(--bg);
-  color: #f4f5fb;
+  color: var(--text);
   font: 16px "DM Sans", sans-serif;
 }
 
@@ -42,7 +48,7 @@ a {
   padding: 12px 16px;
   border-radius: 6px;
   background: #fff;
-  color: #080f1e;
+  color: var(--bg);
   transform: translateY(-160%);
 }
 
@@ -111,7 +117,7 @@ header {
 nav {
   display: flex;
   gap: 28px;
-  color: #aeb9cb;
+  color: var(--muted);
   font-size: 13px;
 }
 
@@ -198,18 +204,18 @@ em {
   justify-content: center;
   gap: 28px;
   background: var(--blue);
-  color: white;
+  color: var(--text);
   border: 0;
-  border-radius: 7px;
+  border-radius: 999px;
   padding: 17px 22px;
   font-size: 13px;
   font-weight: 700;
-  box-shadow: 0 8px 26px #2063cb28;
+  box-shadow: 0 8px 26px #4f8df728;
   transition: 0.2s;
 }
 
 .button:hover {
-  background: #70a3ff;
+  background: var(--blue-hover);
   transform: translateY(-2px);
 }
 
@@ -220,7 +226,7 @@ em {
 
 .note {
   font-size: 10px;
-  color: #78879f;
+  color: var(--muted);
   margin-top: 30px;
 }
 
@@ -233,7 +239,7 @@ em {
   height: 620px;
   position: relative;
   isolation: isolate;
-  background: radial-gradient(ellipse at center, #1c3e7150, transparent 65%);
+  background: radial-gradient(ellipse at center, #25446e50, transparent 65%);
 }
 
 .orbit {
@@ -300,7 +306,7 @@ em {
 .floating {
   position: absolute;
   z-index: 3;
-  background: #142137ed;
+  background: #13243eed;
   border: 1px solid #ffffff1a;
   box-shadow: 0 15px 40px #0005;
   border-radius: 12px;
@@ -349,12 +355,12 @@ em {
   left: 50px;
   font-size: 8px;
   letter-spacing: 1.9px;
-  color: #6b7e99;
+  color: var(--muted);
 }
 
 .ribbon {
   border-block: 1px solid var(--line);
-  background: #0c1525;
+  background: var(--surface);
   overflow: hidden;
   padding: 24px 0;
   display: flex;
@@ -399,7 +405,7 @@ em {
 }
 
 .cards article {
-  background: linear-gradient(130deg, #142035, #0d1727);
+  background: linear-gradient(130deg, var(--surface), var(--bg));
   border: 1px solid var(--line);
   padding: 28px;
   border-radius: 12px;
@@ -420,7 +426,7 @@ em {
 
 .icon small {
   font-size: 11px;
-  color: #53637c;
+  color: var(--muted);
 }
 
 .cards p {
@@ -445,7 +451,7 @@ em {
 }
 
 .showcase {
-  background: linear-gradient(#0c1627, #101c30 60%, #0c1627);
+  background: linear-gradient(var(--bg), var(--surface) 60%, var(--bg));
   border-block: 1px solid var(--line);
   padding: 100px 0 55px;
 }
@@ -602,7 +608,7 @@ em {
 }
 
 .faq-question:hover {
-  color: #79a8ff;
+  color: var(--blue-hover);
 }
 
 .faq-question span {
@@ -613,7 +619,7 @@ em {
 
 .faq-question[aria-expanded="true"] span {
   transform: rotate(45deg);
-  color: #79a8ff;
+  color: var(--blue-hover);
 }
 
 .faq-answer p {
@@ -625,12 +631,16 @@ em {
 
 .cta {
   text-align: center;
-  background: radial-gradient(ellipse at 50% 100%, #234a7c55, transparent 70%), #101d32;
+  background: radial-gradient(ellipse at 50% 100%, #25446e55, transparent 70%), var(--surface);
   border: 1px solid #ffffff16;
   border-radius: 18px;
   padding: 65px 25px 35px;
   position: relative;
   overflow: hidden;
+}
+
+.cta .eyebrow {
+  color: var(--blue-hover);
 }
 
 .cta h2 {
@@ -687,7 +697,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 24px 0;
-  color: #687a96;
+  color: var(--muted);
   font-size: 10px;
 }
 
@@ -698,9 +708,9 @@ footer {
 }
 
 dialog {
-  background: #0d182a;
-  border: 1px solid #465878;
-  color: white;
+  background: var(--surface);
+  border: 1px solid var(--selected);
+  color: var(--text);
   border-radius: 15px;
   max-width: min(90vw, 450px);
   max-height: 94vh;
@@ -709,7 +719,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background: #020713dd;
+  background: #091426ee;
   backdrop-filter: blur(10px);
 }
 
@@ -734,11 +744,20 @@ dialog p {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid #ffffff22;
-  background: #111d30;
-  color: #fff;
+  border: 1px solid var(--control-line);
+  background: var(--surface);
+  color: var(--text);
   font-size: 22px;
   line-height: 1;
+}
+
+.close:hover,
+.close:focus-visible {
+  background: var(--selected);
+}
+
+.close:active {
+  border-color: var(--blue);
 }
 
 #gallery {
@@ -1025,9 +1044,9 @@ dialog p {
   justify-content: center;
   gap: 10px;
   padding: 15px 24px;
-  background: linear-gradient(110deg, #1d4ed8, #2459cc);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--blue);
+  color: var(--text);
+  border: 1px solid var(--blue);
   border-radius: 999px;
   font-family: "DM Sans", sans-serif;
   font-size: 15px;
@@ -1035,7 +1054,7 @@ dialog p {
   line-height: 1.2;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 6px 22px rgba(77, 140, 255, 0.22);
+  box-shadow: 0 6px 22px rgba(79, 141, 247, 0.22);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -1047,11 +1066,11 @@ dialog p {
 
 .download-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 9px 28px rgba(77, 140, 255, 0.35);
+  box-shadow: 0 9px 28px rgba(79, 141, 247, 0.35);
 }
 
 .download-button:focus-visible {
-  outline: 2px solid #eec15e;
+  outline: 2px solid var(--gold);
   outline-offset: 4px;
 }
 
@@ -1216,7 +1235,7 @@ header nav a::after {
   width: 100%;
   height: 2px;
   border-radius: 10px;
-  background: #4d8cff;
+  background: var(--blue);
   box-shadow: 0 0 12px rgba(77, 140, 255, 0.5);
   transform: scaleX(0);
   transform-origin: center;
@@ -1225,7 +1244,7 @@ header nav a::after {
 
 header nav a:hover,
 header nav a:focus-visible {
-  color: #79a8ff;
+  color: var(--blue-hover);
   transform: translateY(-3px);
   text-shadow: 0 0 18px rgba(77, 140, 255, 0.3);
 }
@@ -1258,8 +1277,10 @@ header .download-button svg {
 
 header .download-button:hover,
 header .download-button:focus-visible {
+  background: var(--blue-hover);
+  border-color: var(--blue-hover);
   transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 14px 30px rgba(36, 89, 204, 0.35), 0 0 25px rgba(77, 140, 255, 0.2);
+  box-shadow: 0 14px 30px rgba(79, 141, 247, 0.35), 0 0 25px rgba(79, 141, 247, 0.2);
 }
 
 header .download-button:hover::after,
@@ -1273,6 +1294,8 @@ header .download-button:focus-visible svg {
 }
 
 header .download-button:active {
+  background: var(--blue-active);
+  border-color: var(--blue-active);
   transform: translateY(-1px) scale(0.98);
 }
 
@@ -1295,7 +1318,7 @@ header .brand:active img {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: #2459cc;
+  background: var(--blue);
   transition: transform 300ms ease, box-shadow 300ms ease, background 300ms ease !important;
 }
 
@@ -1317,8 +1340,8 @@ header .brand:active img {
 .hero .actions .button:hover,
 .hero .actions .button:focus-visible {
   transform: translateY(-4px) scale(1.04);
-  background: #1d4ed8;
-  box-shadow: 0 14px 30px rgba(36, 89, 204, 0.35), 0 0 25px rgba(77, 140, 255, 0.2);
+  background: var(--blue-hover);
+  box-shadow: 0 14px 30px rgba(79, 141, 247, 0.35), 0 0 25px rgba(79, 141, 247, 0.2);
 }
 
 .hero .actions .button:hover::after,
@@ -1332,6 +1355,7 @@ header .brand:active img {
 }
 
 .hero .actions .button:active {
+  background: var(--blue-active);
   transform: scale(0.98);
 }
 
@@ -1349,7 +1373,7 @@ header .brand:active img {
   width: 100%;
   height: 2px;
   border-radius: 10px;
-  background: #4d8cff;
+  background: var(--blue);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 300ms ease !important;
@@ -1357,7 +1381,7 @@ header .brand:active img {
 
 .hero .actions .text-link:hover,
 .hero .actions .text-link:focus-visible {
-  color: #79a8ff;
+  color: var(--blue-hover);
   transform: translateY(-3px);
 }
 
@@ -1485,8 +1509,8 @@ header .brand:active img {
 #acesso .button:hover,
 #acesso .button:focus-visible {
   transform: translateY(-5px) scale(1.04);
-  background: #5793ff;
-  box-shadow: 0 16px 35px rgba(36, 89, 204, 0.4), 0 0 30px rgba(77, 140, 255, 0.25);
+  background: var(--blue-hover);
+  box-shadow: 0 16px 35px rgba(79, 141, 247, 0.4), 0 0 30px rgba(79, 141, 247, 0.25);
 }
 
 #acesso .button:hover::after,
@@ -1500,6 +1524,7 @@ header .brand:active img {
 }
 
 #acesso .button:active {
+  background: var(--blue-active);
   transform: translateY(-1px) scale(0.98);
 }
 
@@ -1691,7 +1716,7 @@ dialog#gallery {
 }
 
 #como .step-list article:hover h3 {
-  color: #79a8ff;
+  color: var(--blue-hover);
 }
 
 #como .text-link {
@@ -1710,7 +1735,7 @@ dialog#gallery {
   width: 100%;
   height: 2px;
   border-radius: 10px;
-  background: #4d8cff;
+  background: var(--blue);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 300ms ease !important;
